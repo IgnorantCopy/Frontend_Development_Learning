@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <input type="text" id="password">
+    <form id="myForm" onsubmit="submitHandle">
+        <input type="text" name="users">
+        <button id="resetbtn">重置</button>
+        <button>提交表单</button>
+    </form>
+    <script>
+        //表单事件是在使用表单元素及输入框元素可以监听的一系列事件
+        //1.input事件：当`<input>、<select>、<textarea>`的值发生变化时触发。
+        var username = document.getElementById("username")
+        username.oninput = function(e){
+            console.log(e.target.value);
+        }
+        //2.select事件：当在`<input>、<textarea>`里面选中文本时触发
+        username.onselect = function(){
+            console.log("选中了");
+        }
+        //3.change事件：当`<input>、<select>、<textarea>`的值发生变化时触发。它与input事件的最大不同，就是不会连续触发，只有当全部修改完成时(失去焦点或回车)才会触发
+        var password = document.getElementById('password')
+        password.onchange = function(e){
+            console.log(e.target.value);
+        }
+        //4.reset事件、submit事件：这两个事件发生在表单对象`<form>`上，而不是发生在表单的成员上。
+        var resetbtn = document.getElementById("resetbtn")
+        var myForm = document.getElementById("myForm")
+        resetbtn.onclick = function(){
+            myForm.reset();
+        }
+        function submitHandle(){
+            console.log("想做的事情");
+        }
+
+    </script>
+</body>
+</html>

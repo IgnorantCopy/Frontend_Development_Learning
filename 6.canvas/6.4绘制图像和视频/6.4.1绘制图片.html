@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        //获取图片
+        var img = new Image();
+        img.src = "../6.3样式和颜色/background.jpg"
+        img.onload = function () {
+            //方法一：原图(Image, x, y)
+            // context.drawImage(img, 0, 0);
+            //方法二：缩放(Image, x, y, width, height)
+            context.drawImage(img, 0, 0, 600, 400);
+            //方法三：裁剪(Image, px, py, pwidth, pheight, x, y, width, height)
+            // context.drawImage(img, 640, 0, 1280, 720, 0, 0, 600, 400);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        var img = new Image();
+        img.crossOrigin = "";
+        img.src = "./background.jpg";
+        img.onload = function () {
+            context.drawImage(img, 0, 0, 600, 400);
+            var imgData = context.getImageData(0, 0, 600, 400);
+            console.log(imgData);
+            for (let i = 0; i < imgData.data.length; i += 4) {
+                //反相
+                imgData.data[i] = 255 - imgData.data[i];
+                imgData.data[i + 1] = 255 - imgData.data[i + 1];
+                imgData.data[i + 2] = 255 - imgData.data[i + 2];
+                imgData.data[i + 3] = 255;
+            }
+            context.putImageData(imgData, 0, 0, 400, 0, 200, 400);
+            for (let i = 0; i < imgData.data.length; i += 4) {
+                //灰白
+                //计算灰度
+                let avg = (imgData.data[i] + imgData.data[i + 1] + imgData.data[i + 2]) / 3;
+                imgData.data[i] = avg;
+                imgData.data[i + 1] = avg;
+                imgData.data[i + 2] = avg;
+                imgData.data[i + 3] = 255;
+            }
+            context.putImageData(imgData, 0, 0, 0, 0, 200, 400);
+
+        }
+    </script>
+</body>
+
+</html>

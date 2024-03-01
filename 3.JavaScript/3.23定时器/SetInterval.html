@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .someDiv{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="someDiv"></div>
+    <script>
+        //setInterval()函数的用法与setTimeout()完全一致，区别仅仅在于setInterval()指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行
+        // var i = 0;
+        // setInterval(function(){
+        //     i++
+        //     console.log(i);
+        // },1000)
+
+        //通过setInterval方法实现网页动画
+        var div = document.getElementById("someDiv") 
+        var opacity = 1
+        setInterval(function(){
+            if (opacity<=-1) {
+                opacity = 1
+            }
+            opacity-=0.05
+            div.style.opacity = Math.abs(opacity)
+            div.style.width = "200px"
+            div.style.height = "200px"
+            div.style.backgroundColor = "red"
+
+        },60)
+
+    </script>
+</body>
+</html>

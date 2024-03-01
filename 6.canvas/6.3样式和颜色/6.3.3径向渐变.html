@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        //径向渐变
+        var radialGradient = context.createRadialGradient(300, 200, 0, 300, 200, 100);
+        radialGradient.addColorStop(0, 'red');
+        radialGradient.addColorStop(0.67, '#ffcccc');
+        radialGradient.addColorStop(1, 'blue');
+        context.fillStyle=radialGradient;
+        context.fillRect(0,0,600,400);
+        
+    </script>
+</body>
+</html>

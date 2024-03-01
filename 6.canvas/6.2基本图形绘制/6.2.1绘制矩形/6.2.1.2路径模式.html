@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1" width="600px" height="400px">
+        <!-- 判断浏览器是否支持Canvas -->
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        //1.找到画布
+        var canvas1 = document.getElementById("canvas1")
+        //2.获取画笔、上下文对象
+        var context = canvas1.getContext("2d")
+        //3.绘制图形
+        //矩形路径模式
+        context.strokeRect(100, 100, 200, 100);  //(x,y,width,height)
+    </script>
+</body>
+</html>

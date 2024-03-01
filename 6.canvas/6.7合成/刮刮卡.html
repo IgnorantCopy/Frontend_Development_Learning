@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #ggk {
+            width: 600px;
+            height: 400px;
+            font-size: 30px;
+            font-weight: 900;
+            text-align: center;
+            line-height: 400px;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ggk">谢谢惠顾</div>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        context.fillStyle = 'rgb(155, 167, 175)';
+        context.fillRect(0, 0, 600, 400);
+        var isDraw = false;
+        canvas.onmousedown = function () {
+            isDraw = true;
+        }
+        canvas.onmouseup = function () {
+            isDraw = false;
+        }
+        canvas.onmousemove = function (e) {
+            if (isDraw) {
+                var x = e.pageX;
+                var y = e.pageY;
+                context.globalCompositeOperation = 'destination-out';
+                context.arc(x, y, 20, Math.PI / 180 * 0, Math.PI / 180 * 360);
+                context.fill();
+            }
+        }
+        var random = Math.random();
+        if (random <= 0.1) {
+            var ggk = document.querySelector('#ggk')
+            ggk.innerHTML = "恭喜你中奖了!"
+        }
+
+    </script>
+</body>
+
+</html>

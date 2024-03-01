@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组(array):按次序排列的一组值。
+        var arr = [ 100, [1, 2, 3],false ];
+        console.log(arr[1]);
+        console.log(arr[1][1]);
+        console.log(arr);
+        //下标越界：返回undefined
+        console.log(arr[5]);
+
+        //length属性
+        console.log(arr.length);
+
+        //数组的遍历
+        //方法1：
+        for(var i = 0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+        //方法2：
+        for(var i in arr){
+            console.log(arr[i]);
+        }
+
+        //静态方法 Array.isArray()
+        console.log(typeof arr);
+        console.log(Array.isArray(arr));
+
+        //push() 方法：在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。
+        arr.push('hello','world');
+        console.log(arr);
+        
+        //pop() 方法：删除数组的最后一个元素，并返回该元素。
+        arr.pop();
+        console.log(arr);
+
+        // unshift() 方法：在数组的第一个位置添加元素，并返回添加新元素后的数组长度。
+        arr.unshift('hello');
+        console.log(arr);
+
+        //shift() 方法：删除数组的第一个元素，并返回该元素。
+        arr.shift();
+        console.log(arr);
+        //利用shift()方法清空一个数组
+        var arr1 = [1,2,3,4,5];
+        var item;
+        while(item = arr1.shift()){
+            console.log(item);
+        }
+        console.log(arr1);
+
+        //join() 方法：以指定参数作为分隔符，将所有数组成员连接为一个字符串返回。如果不提供参数，默认用逗号分隔。
+        console.log(arr.join('|'));
+        console.log(arr.join());
+        //如果数组成员是"undefined"或"null"或空位，会被转成空字符串
+        var arr2 = [null ,undefined ,''];
+        console.log(arr2.join());
+        //数组的"join"配合字符串的"split"可以实现数组与字符串的互换
+        var str1 = arr.join(" ");
+        console.log(str1);
+        var arr3 = str1.split(" ");
+        console.log(arr3);
+
+        //concat() 方法：用于多个数组的合并。
+        arr1 = [1,2,3,4,5];
+        var arr4 = arr1.concat(arr2);
+        console.log(arr4);
+        // 除了数组作为参数，`concat`也接受其他类型的值作为参数，添加到目标数组尾部。
+        arr4 = arr1.concat(6,7,8);
+        console.log(arr4);
+
+        //reverse() 方法：用于颠倒排列数组元素，返回改变后的数组。
+        arr.reverse();
+        console.log(arr);
+        //应用：字符串的翻转
+        var str2 = "helloworld";
+        var str3 = str2.split("").reverse().join("");
+        console.log(str3);
+
+        //indexOf() 方法：返回给定元素在数组中第一次出现的位置，如果没有出现则返回-1
+        console.log(arr1.indexOf(3));
+        //indexOf()方法还可以接受第二个参数，表示搜索的开始位置
+        arr.push('hello');
+        console.log(arr.indexOf('hello',1));
+
+    </script>
+</body>
+</html>

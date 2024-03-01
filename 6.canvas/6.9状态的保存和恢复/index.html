@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="800px" height="800px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        context.fillStyle = 'red';
+        context.fillRect(0, 0, 100, 100);
+        context.save();
+
+        context.fillStyle = 'blue';
+        context.fillRect(100, 100, 100, 100);
+        context.save();
+
+        context.fillStyle = 'yellow';
+        context.fillRect(200, 200, 100, 100);
+        context.save();
+
+        context.fillStyle = 'green';
+        context.fillRect(300, 300, 100, 100);
+
+        context.restore();
+        context.fillRect(400, 400, 100, 100);
+
+        context.restore();
+        context.fillRect(500, 500, 100, 100);
+
+        context.restore();
+        context.fillRect(600, 600, 100, 100);
+
+    </script>
+</body>
+
+</html>

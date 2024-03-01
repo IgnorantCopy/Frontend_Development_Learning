@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="600px" height="800px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+
+        function render() {
+            context.clearRect(0, 0, 600, 800);
+            //获取时间
+            var time = new Date();
+            var hour = time.getHours();
+            var minute = time.getMinutes();
+            var sec = time.getSeconds();
+
+            context.save();
+            context.font = '100px Microsoft YaHei';
+            context.textAlign = 'center';
+            context.strokeText("" + hour + ":" + minute + ":" + sec, 300, 650);
+            context.restore();
+
+            //画表盘
+            context.save();
+            context.translate(300, 300);
+            context.rotate(-Math.PI / 180 * 90);
+
+            context.save();
+            for (let i = 0; i < 60; i++) {
+                context.rotate(Math.PI / 180 * 6);
+                context.beginPath();
+                context.moveTo(170, 0);
+                context.lineTo(190, 0);
+                context.lineWidth = 3;
+                context.strokeStyle = 'gray';
+                context.stroke();
+                context.closePath();
+            }
+            context.restore();
+            context.save();
+            for (let i = 0; i < 12; i++) {
+                context.rotate(Math.PI / 180 * 30);
+                context.beginPath();
+                context.moveTo(160, 0);
+                context.lineTo(190, 0);
+                context.lineWidth = 6;
+                context.strokeStyle = 'black';
+                context.stroke();
+                context.closePath();
+            }
+            context.restore();
+            hour = hour >= 12 ? (hour - 12) : hour;
+            //画指针
+            context.save();
+            context.rotate(Math.PI / 180 * 6 * sec);
+            context.beginPath();
+            context.moveTo(-30, 0);
+            context.lineTo(190, 0);
+            context.lineWidth = 2;
+            context.strokeStyle = 'red';
+            context.stroke();
+            context.closePath();
+            context.restore();
+
+            context.save();
+            context.rotate(Math.PI / 180 * 6 * minute + Math.PI / 180 * 6 * (sec / 60));
+            context.beginPath();
+            context.moveTo(-20, 0);
+            context.lineTo(130, 0);
+            context.lineWidth = 4;
+            context.strokeStyle = '#888';
+            context.stroke();
+            context.closePath();
+            context.restore();
+
+            context.save();
+            context.rotate(Math.PI / 180 * 30 * hour + Math.PI / 180 * 30 * (minute / 60) + Math.PI / 180 * (sec / 120));
+            context.beginPath();
+            context.moveTo(-15, 0);
+            context.lineTo(110, 0);
+            context.lineWidth = 6;
+            context.strokeStyle = '#333';
+            context.stroke();
+            context.closePath();
+            context.restore();
+            context.restore();
+            requestAnimationFrame(render);
+        }
+        render();
+
+    </script>
+</body>
+
+</html>

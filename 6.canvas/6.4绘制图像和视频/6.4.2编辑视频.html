@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <video src="./mov_bbb.mp4" controls hidden></video>
+    <button id="btn">播放/暂停</button>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        //设置视频对象
+        var video = document.querySelector("video");
+
+        var btn = document.querySelector("#btn");
+        btn.onclick = function () {
+            if (video.paused) {
+                video.play();
+                render();
+            }else{
+                video.pause();
+            }
+        }
+
+        var logo = new Image();
+        logo.src = "./logo.png";
+
+        function render() {
+            context.drawImage(video,0, 0, 600, 400);
+            context.drawImage(logo, 450, 350, 150, 50);
+            requestAnimationFrame(render);
+        }
+    </script>
+</body>
+</html>

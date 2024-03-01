@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        class Heart {
+
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.color = 'black';
+                this.isIn = false;
+                this.eventMapList = {
+                    hover: [],
+                    leave: [],
+                }
+
+                canvas.onmousemove = (e) => {
+                    var x = e.offsetX;
+                    var y = e.offsetY;
+                    this.isIn = context.isPointInPath(this.heartPath, x, y);
+                    if (this.isIn) {
+                        this.eventMapList.hover.forEach((item) => {
+                            item();
+                        });
+                    } else {
+                        this.eventMapList.leave.forEach((item) => {
+                            item();
+                        });
+                    }
+                }
+            }
+
+            onHover(fn) {
+                this.eventMapList.hover.push(fn);
+            }
+
+            onLeave(fn) {
+                this.eventMapList.leave.push(fn);
+            }
+
+            setColor(color) {
+                this.color = color;
+            }
+
+            setPosition(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            draw() {
+                this.heartPath = new Path2D();
+                this.heartPath.moveTo(this.x, this.y);
+                this.heartPath.bezierCurveTo(this.x + 50, this.y - 50, this.x + 100, this.y + 50, this.x, this.y + 100);
+                this.heartPath.bezierCurveTo(this.x - 100, this.y + 50, this.x - 50, this.y - 50, this.x, this.y);
+
+                context.save();
+                context.fillStyle = this.color;
+                context.fill(this.heartPath);
+                context.restore();
+            }
+
+        }
+
+        class Chat {
+
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.color = 'black';
+            }
+
+            setColor(color) {
+                this.color = color;
+            }
+
+            setPosition(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            draw() {
+                this.chatPath = new Path2D();
+                this.chatPath.moveTo(this.x, this.y);
+                this.chatPath.quadraticCurveTo(this.x - 50, this.y, this.x - 50, this.y - 100);
+                this.chatPath.quadraticCurveTo(this.x - 50, this.y - 200, this.x + 100, this.y - 200);
+                this.chatPath.quadraticCurveTo(this.x + 250, this.y - 200, this.x + 250, this.y - 100);
+                this.chatPath.quadraticCurveTo(this.x + 250, this.y, this.x + 50, this.y);
+                this.chatPath.quadraticCurveTo(this.x + 50, this.y + 50, this.x - 50, this.y + 50);
+                this.chatPath.quadraticCurveTo(this.x, this.y + 50, this.x, this.y);
+
+                context.save();
+                context.fillStyle = this.color;
+                context.stroke(this.chatPath);
+                context.restore();
+            }
+
+        }
+
+        var heart = new Heart(300, 170);
+        var chat = new Chat(200, 300);
+
+        heart.onHover(() => {
+            heart.color = 'red';
+        })
+        heart.onLeave(() => {
+            heart.color = 'black';
+        })
+
+        function render() {
+            context.clearRect(0, 0, 600, 400);
+            heart.draw();
+            chat.draw();
+            requestAnimationFrame(render);
+        }
+        render();
+
+    </script>
+</body>
+
+</html>

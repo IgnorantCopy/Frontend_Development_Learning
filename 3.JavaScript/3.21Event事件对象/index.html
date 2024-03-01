@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .root{
+            width: 200px;
+            height: 200px;
+            background-color: #999;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <a href="https://baidu.com" id="baidu">百度</a>
+    <div class="root" id="root">
+        <div class="box" id="box"></div>
+    </div>
+
+    <script>
+        var btn = document.getElementById("btn")
+        //属性
+        //1.target:返回事件当前所在的节点
+        //2.type:返回一个字符串，表示事件类型。
+        btn.onclick = function(event){
+            console.log(event.target);
+            event.target.innerHTML = "已经点击"
+            console.log(event.type);
+        }
+
+        //方法
+        //Event.preventDefault():取消浏览器对当前事件的默认行为。
+        var baidu = document.getElementById("baidu")
+        baidu.onclick = function(event){
+            event.preventDefault();
+            console.log("点击了a标签");
+        }
+        //Event.stopPropagation():阻止事件在 DOM 中继续传播，防止再触发定义在别的节点上的监听函数，但是不包括在当前节点上其他的事件监听函数
+        var root = document.getElementById("root")
+        var box = document.getElementById("box")
+        root.onclick = function(){
+            console.log("root");
+        }
+        box.onclick = function(e){
+            e.stopPropagation();
+            console.log("box");
+        }
+
+    </script>
+    
+</body>
+</html>

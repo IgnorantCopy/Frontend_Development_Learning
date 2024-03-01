@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        //颜色
+        context.strokeStyle = 'red';
+        //文字大小/字体
+        context.font = '100px Microsoft YaHei';
+        //文本对齐
+        context.textAlign = 'center';
+        //文本基线
+        context.textBaseline = 'middle';
+        //文本方向
+        // context.direction = 'rtl';
+        //填充渲染文字
+        // context.fillText("hello world", 100, 200, 400);
+        context.strokeText("Hello!", 300, 200, 400);  //最后一个参数可以省略
+        context.arc(300, 200, 5, Math.PI / 180 * 0, Math.PI / 180 * 360);
+        //预测量文本宽度
+        var text = context.measureText("Hello!");
+        console.log(text);
+        context.fill();
+
+
+    </script>
+</body>
+
+</html>

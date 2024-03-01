@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas1" width="1791px" height="1007px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        //1.找到画布
+        var canvas1 = document.getElementById("canvas1")
+        //2.获取画笔、上下文对象
+        var context = canvas1.getContext("2d")
+        //3.绘制图形
+        //气泡聊天框
+        context.beginPath();
+        context.strokeStyle = 'red';
+        context.lineWidth = 6;
+        context.lineCap = 'round';
+        context.moveTo(745, 329);
+        context.quadraticCurveTo(760, 315, 785, 315);
+        context.quadraticCurveTo(820, 315, 820, 400);
+        context.quadraticCurveTo(820, 500, 800, 603);
+        context.stroke();
+        context.closePath();
+    </script>
+</body>
+
+</html>

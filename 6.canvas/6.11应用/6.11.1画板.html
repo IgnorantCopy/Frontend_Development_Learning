@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+
+        button.active {
+            color: #fff;
+            background-color: orange;
+
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="1000px" height="600px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <hr>
+    <button id="boldBtn" type="button">粗线条</button>
+    <button id="thinBtn" type="button">细线条</button>
+    <button id="saveBtn" type="button">保存</button>
+    <input type="color" name="" id="color" value="">
+    <button id="clearBtn" type="button">橡皮擦</button>
+    <button id="nullBtn" type="button">清空</button>
+
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+        var boldBtn = document.getElementById("boldBtn")
+        var thinBtn = document.getElementById("thinBtn")
+        var saveBtn = document.getElementById("saveBtn")
+        var clearBtn = document.getElementById("clearBtn")
+        var nullBtn = document.getElementById("nullBtn")
+        var inputColor = document.getElementById("color")
+
+        var isDraw = false;
+        context.lineJoin = 'round';
+        context.lineCap = 'round';
+        context.lineWidth = 5;
+
+        canvas.onmousedown = function () {
+            isDraw = true;
+            context.beginPath();
+            var x = event.pageX - canvas.offsetLeft;
+            var y = event.pageY - canvas.offsetTop;
+            context.moveTo(x, y);
+        }
+        canvas.onmouseleave = function () {
+            isDraw = false;
+            context.closePath();
+        }
+        canvas.onmouseup = function () {
+            isDraw = false;
+            context.closePath();
+        }
+        canvas.onmousemove = function () {
+            if (isDraw) {
+                var x = event.pageX - canvas.offsetLeft;
+                var y = event.pageY - canvas.offsetTop;
+                context.lineTo(x, y);
+                context.stroke();
+            }
+        }
+
+        boldBtn.onclick = function () {
+            context.globalCompositeOperation = 'source-over';
+            context.lineWidth = 10;
+            boldBtn.classList.add('active');
+            thinBtn.classList.remove('active');
+            clearBtn.classList.remove('active');
+        }
+        thinBtn.onclick = function () {
+            context.globalCompositeOperation = 'source-over';
+            context.lineWidth = 5;
+            thinBtn.classList.add('active');
+            boldBtn.classList.remove('active');
+            clearBtn.classList.remove('active');
+        }
+        saveBtn.onclick = function () {
+            var urlData = canvas.toDataURL();
+            var download = document.createElement('a');
+            download.setAttribute('download', '保存的画板');
+            download.href = urlData;
+            download.click();
+        }
+        clearBtn.onclick = function () {
+            context.globalCompositeOperation = 'destination-out';
+            context.lineWidth = 20;
+            clearBtn.classList.add('active');
+            thinBtn.classList.remove('active');
+            boldBtn.classList.remove('active');
+        }
+        nullBtn.onclick = function () {
+            context.clearRect(0, 0, 1000, 600);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Hello1</div>
+    <div>Hello2</div>
+    <p class="text1">Hello</p>
+    <p class="text2">Hello</p>
+    <form name="login"></form>
+    <div id="root">哈哈哈</div>
+    <div class="nav">nav1</div>
+    <div class="nav">nav2</div>
+    <div id="container"></div>
+    <script>
+
+        //获取元素
+        //document.getElementsByTagName():搜索 HTML 标签名，返回符合条件的元素。它的返回值是一个类似数组对象（`HTMLCollection`实例），可以实时反映 HTML 文档的变化。如果没有任何匹配的元素，就返回一个空集。
+        var divs = document.getElementsByTagName("div")[0]
+        divs.innerHTML = "HelloWorld"
+        //如果传入`*`，就可以返回文档中所有 HTML 元素
+
+        //document.getElementsByClassName():回一个类似数组的对象（`HTMLCollection`实例），包括了所有`class`名字符合指定条件的元素，元素的变化实时反映在返回结果中。
+        var text = document.getElementsByClassName("text1")[0]
+        text.innerHTML = "Hello!"
+        //参数可以是多个`class`，它们之间使用空格分隔
+
+        //document.getElementsByName():用于选择拥有`name`属性的 HTML 元素（比如`<form>`、`<radio>`、`<img>`等），返回一个类似数组的的对象（`NodeList`实例），因为`name`属性相同的元素可能不止一个。
+        var name = document.getElementsByName("login")
+        console.log(name);
+        //使用率极低
+
+        //document.getElementById():返回匹配指定`id`属性的元素节点。如果没有发现匹配的节点，则返回`null`。
+        var root = document.getElementById("root")
+        root.innerHTML = "呵呵呵"
+        
+        //document.querySelector():接受一个 CSS 选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回`null。
+        var nav = document.querySelector(".nav")
+        console.log(nav);
+
+        //document.querySelectorAll():与`querySelector`用法类似，区别是返回一个`NodeList`对象，包含所有匹配给定选择器的节点。
+        var navs = document.querySelectorAll(".nav")[1]
+        console.log(navs);
+
+
+        //创建元素
+        //document.createElement():用来生成元素节点，并返回该节点。
+        var text1 = document.createElement("p")
+        console.log(text1);
+        //document.createTextNode():生成文本节点（`Text`实例），并返回该节点。它的参数是文本节点的内容。
+        var content = document.createTextNode("我是文本")
+        text1.appendChild(content)   //appendChild():将内容或者子元素放到容器中
+        console.log(text1);
+        //document.createAttribute():生成一个新的属性节点（`Attr`实例），并返回它。
+        var id = document.createAttribute("id")
+        id.value = "root"
+        console.log(id);
+        text1.setAttributeNode(id)
+        console.log(text1);
+        var container = document.getElementById("container")
+        container.appendChild(text1)
+
+
+    </script>
+</body>
+</html>

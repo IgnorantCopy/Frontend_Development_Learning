@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        //线性渐变
+        var index = 0;
+        function render() {
+            context.clearRect(0, 0, 600, 400);
+            index += 0.005;
+            if (index >= 1) {
+                index = 0;
+            }
+            var linearGradient = context.createLinearGradient(0, 0, 600, 400);  //起点+终点
+            linearGradient.addColorStop(0, 'red');
+            linearGradient.addColorStop(index, '#ffcccc');
+            linearGradient.addColorStop(1, 'blue');
+            context.fillStyle = linearGradient;
+            context.fillRect(0,0,600,400);
+            return requestAnimationFrame(render);
+        }
+        requestAnimationFrame(render);
+        
+    </script>
+</body>
+</html>

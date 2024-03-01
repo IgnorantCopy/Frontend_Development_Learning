@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        //创建图案样式pattern
+        var img = new Image();
+        img.src = "background.jpg";
+        img.onload = function () {
+            //创建图案对象(可以是image对象，也可以是canvas对象)
+            var pattern = context.createPattern(img, "repeat");  //重复：repeat；水平重复：repeat-x；垂直重复：repeat-y；不重复：no-repeat
+            context.fillStyle= pattern;
+            context.fillRect(0,0,600,400);
+        }
+
+    </script>
+</body>
+</html>

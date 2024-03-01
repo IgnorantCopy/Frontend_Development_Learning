@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n1 = 10;
+        var n2 = 5;
+        var n3 = 10;
+        var n4 = '10';
+        /*算数运算符：+ - * / % ++ -- 
+        赋值运算符：= += -= *= /= %=
+        比较运算符：> < >= <= == != === !==
+        布尔运算符：! && ||
+        */
+
+        //===:严格相等；！==：严格不等
+        console.log(n1 == n2);
+        console.log(n1 === n3);
+        console.log(n1 === n4);
+
+        //以下取反都是true，其他为false
+        console.log(!null);
+        console.log(!undefined);
+        console.log(!0);
+        console.log(!"");
+        console.log(!NaN);
+        console.log(!false);
+
+        //三元运算符/三目运算符
+        var num = 52;
+        console.log(num%2 === 0 ? "偶数" : "奇数");
+
+    </script>
+</body>
+</html>

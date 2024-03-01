@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @keyframes myAnimation{
+            0%{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+            33.3%{
+                width: 400px;
+                height: 200px;
+                background-color: green;
+            }
+            66.7%{
+                width: 400px;
+                height: 400px;
+                background-color: blue;
+            }
+            100%{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            animation: myAnimation 3s linear 0s infinite alternate;
+        }
+
+        .box1:hover{
+            animation-play-state: paused;
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .box2:hover{
+            background-color: coral;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1" width="600px" height="600px">
+        <!-- 判断浏览器是否支持Canvas -->
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        //1.找到画布
+        var canvas1 = document.getElementById("canvas1")
+        //2.获取画笔、上下文对象
+        var context = canvas1.getContext("2d")
+        //3.绘制图形
+        /*方法一：
+        context.beginPath();
+        context.arc(75, 75, 50, Math.PI / 180 * 0, Math.PI / 180 * 360);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(75, 75, 35, Math.PI / 180 * 0, Math.PI / 180 * 180);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(60, 65, 5, Math.PI / 180 * 0, Math.PI / 180 * 360);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(90, 65, 5, Math.PI / 180 * 0, Math.PI / 180 * 360);
+        context.stroke();
+        context.closePath();
+        */
+
+        //方法二：moveTo
+        context.beginPath();
+        context.arc(75, 75, 50, Math.PI / 180 * 0, Math.PI / 180 * 360);
+        context.moveTo(110, 75);
+        context.arc(75, 75, 35, Math.PI / 180 * 0, Math.PI / 180 * 180);
+        context.moveTo(65, 65);
+        context.arc(60, 65, 5, Math.PI / 180 * 0, Math.PI / 180 * 360);
+        context.moveTo(95, 65);
+        context.arc(90, 65, 5, Math.PI / 180 * 0, Math.PI / 180 * 360);
+        context.stroke();
+        context.closePath();
+    </script>
+</body>
+</html>

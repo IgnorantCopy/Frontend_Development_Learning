@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1" width="600px" height="600px">
+        <!-- 判断浏览器是否支持Canvas -->
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        //1.找到画布
+        var canvas1 = document.getElementById("canvas1")
+        //2.获取画笔、上下文对象
+        var context = canvas1.getContext("2d")
+        //3.绘制图形
+        context.strokeRect(100, 100, 200, 100);  //(x,y,width,height)
+        context.fillRect(200,150,200,100);
+        //矩形清除模式
+        // context.clearRect(0, 0, canvas1.clientWidth, canvas1.clientHeight);
+        //动画效果
+        var width = 0
+        var height = 0
+        var t1 = setInterval(function () {
+            height++
+            context.clearRect(0, 0, canvas1.clientWidth, height);
+            if (height >= canvas1.clientHeight) {
+                clearInterval(t1)
+            }
+        },10)
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //对象概述
+        var user = {
+            name:'张三',
+            age:25,
+            jobs:{
+                part_time:'家教',
+                full_time:'程序员',
+            },
+            eat:function eat(){
+                console.log("正在吃饭");
+            },
+            list:[1,2,3,4,5]
+        }
+        console.log(user.name);
+        for(var i = 0;i<user.list.length;i++){
+            console.log(user.list[i]);
+        }
+
+
+
+    </script>
+</body>
+</html>

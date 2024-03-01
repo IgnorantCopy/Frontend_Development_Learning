@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Math.abs():绝对值函数
+        console.log(Math.abs(-100));
+        //Math.max()，Math.min()
+        console.log(Math.max(12,84,64,89,13));
+        console.log(Math.min(12,84,64,89,13));
+        //Math.floor()，Math.ceil():向下/向上取整
+        console.log(Math.floor(1.2));
+        console.log(Math.ceil(1.2));
+        //Math.random():返回0到1之间的一个伪随机数 [0,1)
+        //任意范围[a,b]的随机整数
+        function randomInt(a,b){
+            return Math.floor(Math.random()*(b-a+1))+a;
+        }
+        console.log(randomInt(10,20));
+
+    </script>
+
+</body>
+</html>

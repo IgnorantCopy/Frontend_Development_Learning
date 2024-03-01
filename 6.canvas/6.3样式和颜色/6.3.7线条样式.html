@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        /*属性：
+        lineWidth:线条粗细（默认为1.0）
+        lineCap:线条端点(butt,round,square)（默认为butt）
+        lineJion:线条连接处(miter,round,bevel)（默认为miter）
+        miterLimit:
+        */
+        var index = 0
+        function render() {
+            context.clearRect(0, 0, 600, 400);
+            index++;
+            if (index >= 50) {
+                index = 0;
+            }
+            context.moveTo(200, 150);
+            context.lineTo(300, 200);
+            context.lineTo(400, 150);
+            context.lineWidth=2.0;
+            context.lineCap='square';
+            context.lineJoin='round';
+            //虚线
+            context.setLineDash([10,5]);
+            context.lineDashOffset=index;
+            context.stroke();
+            requestAnimationFrame(render);
+        }
+        render()
+        
+    </script>
+</body>
+</html>

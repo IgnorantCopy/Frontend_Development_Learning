@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        /*变形矩阵
+         a c e       a:x轴方向向量的横坐标  c:y轴方向向量的横坐标  e:水平位移
+        [b d f]      b:x轴方向向量的纵坐标  d:y轴方向向量的纵坐标  f:竖直位移
+         0 0 1       注:原方向向量为单位向量
+        */
+        //位移: 水平坐标轴不变:1, 0; 竖直坐标轴不变:0, 1
+        // context.transform(1, 0, 0, 1, 100, 100);    //a, b, c, d, e, f
+        context.transform(1, 1, -1, 1, 100, 100);  //旋转45度,放大根号2倍,水平位移100px,竖直位移100px
+        context.fillRect(0, 0, 50, 50);
+
+    </script>
+</body>
+
+</html>

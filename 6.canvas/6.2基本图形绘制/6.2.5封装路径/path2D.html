@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        var heartPath = new Path2D();
+        heartPath.moveTo(300, 170);
+        heartPath.bezierCurveTo(350, 120, 400, 220, 300, 270);
+        heartPath.bezierCurveTo(200, 220, 250, 120, 300, 170);
+        context.fill(heartPath);
+
+        var chatPath = new Path2D();
+        chatPath.moveTo(200, 300);
+        chatPath.quadraticCurveTo(150, 300, 150, 200);
+        chatPath.quadraticCurveTo(150, 100, 300, 100);
+        chatPath.quadraticCurveTo(450, 100, 450, 200);
+        chatPath.quadraticCurveTo(450, 300, 250, 300);
+        chatPath.quadraticCurveTo(250, 350, 150, 350);
+        chatPath.quadraticCurveTo(200, 350, 200, 300);
+        context.stroke(chatPath);
+        //折线
+        //M:起点  h:水平移动  v:垂直移动  z:回到起点
+        var polyLine = new Path2D('M 10 10 h 80 v 80 h -80 z');
+        context.stroke(polyLine);
+
+    </script>
+</body>
+</html>

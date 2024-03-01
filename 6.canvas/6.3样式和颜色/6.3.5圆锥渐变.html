@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600px" height="400px">
+        当前浏览器不支持canvas
+        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        //圆锥渐变
+        var conicGradient = context.createConicGradient(Math.PI / 180 * 45, 300, 200);
+        conicGradient.addColorStop(0, 'red');
+        conicGradient.addColorStop(0.5, 'yellow');
+        conicGradient.addColorStop(1, 'blue');
+        context.fillStyle = conicGradient;
+        context.fillRect(0,0,600,400);
+        
+    </script>
+</body>
+</html>

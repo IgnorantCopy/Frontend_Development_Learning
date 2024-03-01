@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = "Carl"
+        var user1 = {
+            name:"Jack",
+            getName:function(){
+                console.log(this.name);
+            }
+        }
+        user1.getName();
+        //setTimeout使得方法内部的this关键字指向全局环境，而不是定义时所在的那个对象
+        var user2 = {
+            name:"Jack",
+            getName:function(){
+                setTimeout(function(){
+                    console.log(this.name);
+                },1000)
+            }
+        }
+        user2.getName();
+        //解决方案
+        var user3 = {
+            name:"Jack",
+            getName:function(){
+                var that = this;
+                setTimeout(function(){
+                    console.log(that.name);
+                },1000)
+            }
+        }
+        user3.getName();
+        //取消定时器
+        var timer = setTimeout(function () {
+            console.log("大家好");
+        },3000)
+        clearTimeout(timer);
+
+    </script>
+</body>
+</html>
