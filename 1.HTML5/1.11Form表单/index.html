@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!--
+method:
+    > get: 从服务器获取资源(网页、图片、音视频)
+    > post: 提交数据给服务器
+    > delete: 删除服务器资源
+    > put: 修改服务器资源
+    > patch: 更新服务器资源
+action: 服务器程序地址
+-->
+<fieldset>
+    <legend>用户信息</legend>
+    <form action="" method="post" enctype="multipart/form-data">
+        用户名：<input type="text" name="username" required>
+        <br>
+        邮箱：<input type="email" name="mail" required>
+        <br>
+        密码：<input type="password" name="password" placeholder="由6-20个字符组成" minlength="6" maxlength="20"
+                    required>
+        <br>
+        <!-- 单选 -->
+        性别：
+        <input type="radio" name="sex" value="0" checked>男
+        <input type="radio" name="sex" value="1">女
+        <br>
+        <!--  多选  -->
+        爱好：
+        <input type="checkbox" name="hobby" value="阅读">阅读
+        <input type="checkbox" name="hobby" value="运动">运动
+        <input type="checkbox" name="hobby" value="美食">美食
+        <input type="checkbox" name="hobby" value="旅游">旅游
+        <br>
+        <!--  文件  -->
+        头像:<input type="file" name="photo">
+        <br>
+        <!--  下拉列表  -->
+        省份：
+        <select name="province">
+            <option value="10001">北京</option>
+            <option value="10002">上海</option>
+            <option value="10003">天津</option>
+            <option value="10004" selected>南京</option>
+            <option value="10005">重庆</option>
+        </select>
+        <br>
+        <!--  日期选择  -->
+        生日：<input type="date" name="birthday">
+        <br>
+        <!--  文本区  -->
+        自我介绍：<textarea name="self-introduction" cols="30" rows="10"></textarea>
+        <br>
+        <input type="submit" value="确认">
+        <input type="reset" value="重新填写">
+    </form>
+</fieldset>
+</body>
+
+</html>
