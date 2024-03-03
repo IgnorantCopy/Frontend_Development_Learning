@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box1{
+        /*
+        position属性:
+            > static(静态定位):正常的文档流
+            > relative(相对定位):相对于原来的位置
+            > absolute(绝对定位):相对于父元素原来的位置
+            > fixed(固定定位):相对于浏览器窗口的位置
+        */
+        .box1 {
             width: 200px;
             height: 200px;
             background-color: red;
             position: relative;
             margin-left: 100px;
         }
-        .box2{
+
+        .box2 {
             width: 100px;
             height: 100px;
             background-color: blue;
@@ -24,9 +32,9 @@
     </style>
 </head>
 <body>
-    <div class="box1">
-        <div class="box2"></div>
-    </div>
-    
+<div class="box1">
+    <div class="box2"></div>
+</div>
+
 </body>
 </html>
