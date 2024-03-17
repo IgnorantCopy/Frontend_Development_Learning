@@ -233,3 +233,23 @@ J
 5.NodeJS/5.1Hello/hello.js,5\e\5e273f78b60f8f1197b6543be198ddb866180e6d
 K
 5.NodeJS/5.5HTTP/09-mime.js,b\1\b1f529eee058c0be6e2636f5cf02fb47af20bec4
+Q
+!5.NodeJS/5.6Module/01-hello/me.js,4\f\4f3aca7c8eb2bb1d3f32a6c228635509e7c96344
+S
+#5.NodeJS/5.6Module/01-hello/inde.js,c\7\c72743a256f04ec21238d35879d1ee00a078538f
+T
+$5.NodeJS/5.6Module/01-hello/index.js,a\5\a584bdca4a8daeadd9a8e069459076d7d00fa7dd
+Y
+)5.NodeJS/5.6Module/01-hello/tsconfig.json,3\2\329393c411b1ab187c802d517dedf11ab02317c5
+X
+(5.NodeJS/5.6Module/01-hello/package.json,7\9\79d2b9ea81519803e96c66a72b0665e09fce54de
+P
+ 5.NodeJS/5.6Module/01-hello/test,c\4\c4e5955366702ba558e8c69a95152c46e4ab1d10
+K
+5.NodeJS/5.6Module/index.js,2\c\2c7cccaaa292a52b9c900e5e0bb9b2f020da93fe
+V
+&5.NodeJS/5.6Module/module/package.json,e\e\ee29306b2664a65ed15a104caa12f666bf43e6c0
+P
+ 5.NodeJS/5.6Module/module/app.js,e\f\ef4c1ebe6ab0b2f0ecf6b0e9733b549855d764e8
+O
+5.NodeJS/5.6Module/module/me.js,6\a\6a21967c3a97c31fec2752e30ed95093b2c196af

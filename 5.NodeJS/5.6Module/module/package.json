@@ -1,0 +1,14 @@
+{
+  "name": "module",
+  "version": "1.0.0",
+  "description": "a module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IgnorantCopy/Frontend_Development_Learning.git"
+  },
+  "private": true
+}
