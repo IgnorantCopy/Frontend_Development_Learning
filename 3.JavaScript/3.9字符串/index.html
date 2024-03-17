@@ -6,85 +6,85 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        //单引号和双引号可以互相嵌套，但不可以自身嵌套
-        var str1 = "key = 'value'";
-        //如果要自身嵌套，需要使用\
-        var str2 = "Did she say \"Hello\"?";
-        //字符串默认只能一行显示，如果要换行，需要转义
-        var str3 = "单引号和双引号可以互相嵌套，\
+<script>
+    // 单引号和双引号可以互相嵌套，但不可以自身嵌套
+    let str1 = "key = 'value'";
+    // 如果要自身嵌套，需要使用\
+    let str2 = "Did she say \"Hello\"?";
+    // 字符串默认只能一行显示，如果要换行，需要转义
+    let str3 = "单引号和双引号可以互相嵌套，\
         但不可以自身嵌套";
-        document.write(str1+"<br>");
-        document.write(str2+"<br>");
-        document.write(str3+"<br>");
-        document.write(str3.length+"<br>");
+    document.write(str1 + "<br>");
+    document.write(str2 + "<br>");
+    document.write(str3 + "<br>");
+    document.write(str3.length + "<br>");
 
 
-        //charAt()方法
-        document.write(str1.charAt(5)+"<br>");
-        document.write(str1.charAt(str1.length-1)+"<br>");  //打印最后一个字符
-        document.write(str1.charAt(-1)+"<br>");  //""
+    // charAt()方法
+    document.write(str1.charAt(5) + "<br>");
+    document.write(str1.charAt(str1.length - 1) + "<br>");  //打印最后一个字符
+    document.write(str1.charAt(-1) + "<br>");  //""
 
 
-        //concat()方法
-        var str4 = "Hello";
-        var str5 = "World";
-        var str6 = "!";
-        var num = 100;
-        document.write(str4.concat(str5,str6,num)+"<br>");
-        //与'+'的区别
-        var n1 = 1;
-        var n2 = 2;
-        var n3 = '3';
-        document.write(n1+n2+n3+"<br>");
-        document.write("".concat(n1,n2,n3)+"<br>");
+    // concat()方法
+    let str4 = "Hello";
+    let str5 = "World";
+    let str6 = "!";
+    let num = 100;
+    document.write(str4.concat(str5, str6, num) + "<br>");
+    // 与'+'的区别
+    let n1 = 1;
+    let n2 = 2;
+    let n3 = '3';
+    document.write(n1 + n2 + n3 + "<br>");
+    document.write("".concat(n1, n2, n3) + "<br>");
 
 
-        //substring()方法：第一个参数：开始位置；第二个参数：结束位置（不包含该位置）
-        document.write(str1.substring(0,4)+"<br>");
-        //只写一个参数：从该位置开始到最后
-        document.write(str1.substring(4)+"<br>");
-        //第一个参数大于第二个参数：自动调整
-        document.write(str1.substring(4,0)+"<br>");
-        //参数为负数：自动变为0
-        document.write(str1.substring(-8,4)+"<br>");
+    // substring()方法：第一个参数：开始位置；第二个参数：结束位置（不包含该位置）
+    document.write(str1.substring(0, 4) + "<br>");
+    // 只写一个参数：从该位置开始到最后
+    document.write(str1.substring(4) + "<br>");
+    // 第一个参数大于第二个参数：自动调整
+    document.write(str1.substring(4, 0) + "<br>");
+    // 参数为负数：自动变为0
+    document.write(str1.substring(-8, 4) + "<br>");
 
 
-        //substr()方法：第一个参数：开始位置；第二个参数：长度
-        document.write(str1.substr(0,4)+"<br>");
-        //只写一个参数：从该位置开始到最后
-        document.write(str1.substring(4)+"<br>");
-        //第一个参数为负数：倒数；第二个参数为负数：自动变为0
-        document.write(str1.substr(-7)+"<br>");
-        document.write(str1.substr(-7,-5)+"<br>");
+    // substr()方法：第一个参数：开始位置；第二个参数：长度
+    document.write(str1.substr(0, 4) + "<br>");
+    // 只写一个参数：从该位置开始到最后
+    document.write(str1.substring(4) + "<br>");
+    // 第一个参数为负数：倒数；第二个参数为负数：自动变为0
+    document.write(str1.substr(-7) + "<br>");
+    document.write(str1.substr(-7, -5) + "<br>");
 
 
-        //indexOf()方法:如果存在，返回下标；如果不存在，返回-1
-        document.write(str4.indexOf('e')+"<br>");
-        document.write(str4.indexOf('a')+"<br>");
-        //还可以接受第二个参数，表示从该位置开始向后匹配
-        document.write(str4.indexOf('l')+"<br>");
-        document.write(str4.indexOf('l',3)+"<br>");
+    // indexOf()方法:如果存在，返回下标；如果不存在，返回-1
+    document.write(str4.indexOf('e') + "<br>");
+    document.write(str4.indexOf('a') + "<br>");
+    // 还可以接受第二个参数，表示从该位置开始向后匹配
+    document.write(str4.indexOf('l') + "<br>");
+    document.write(str4.indexOf('l', 3) + "<br>");
 
 
-        //trim()方法:除去 两端 的空格、制表符、换行符、回车符(\r)
-        var str7 = " \thello\tworld \t";
-        document.write(str7.trim()+"<br>");
-        //ES6增加
-        document.write(str7.trimStart()+"<br>");
-        document.write(str7.trimEnd()+"<br>");
+    // trim()方法:除去 两端 的空格、制表符、换行符、回车符(\r)
+    let str7 = " \thello\tworld \t";
+    document.write(str7.trim() + "<br>");
+    // ES6增加
+    document.write(str7.trimStart() + "<br>");
+    document.write(str7.trimEnd() + "<br>");
 
 
-        //split()方法：按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组
-        var str8 = "he|llo|wor|ld";
-        console.log(str8.split('|'));
-        //如果分割规则为空字符串，则返回数组的成员是原字符串的每一个字符。
-        console.log(str8.split(''));
-        //如果省略参数，则返回数组的唯一成员就是原字符串
-        console.log(str8.split());
-        //还可以接受第二个参数，限定返回数组的最大成员数。
-        console.log(str8.split('|',3));
+    // split()方法：按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组
+    let str8 = "he|llo|wor|ld";
+    console.log(str8.split('|'));
+    // 如果分割规则为空字符串，则返回数组的成员是原字符串的每一个字符。
+    console.log(str8.split(''));
+    // 如果省略参数，则返回数组的唯一成员就是原字符串
+    console.log(str8.split());
+    // 还可以接受第二个参数，限定返回数组的最大成员数。
+    console.log(str8.split('|', 3));
 
-    </script>
+</script>
 </body>
 </html>

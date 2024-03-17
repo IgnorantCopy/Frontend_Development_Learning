@@ -1,2 +1,2 @@
-var num = 20;
+let num = 20;
 console.log(num);

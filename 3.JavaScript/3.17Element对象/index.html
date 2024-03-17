@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box{
+        .box {
             width: 200px;
             height: 200px;
         }
-        .box1{
+
+        .box1 {
             background-color: red;
         }
-        .box2{
+
+        .box2 {
             width: 200px;
             height: 200px;
             border: 5px solid red;
@@ -20,16 +22,19 @@
             margin: 20px;
             background-color: green;
         }
-        h3{
+
+        h3 {
             height: 500px;
         }
-        .box3{
+
+        .box3 {
             width: 200px;
             height: 200px;
             background-color: red;
             margin: 100px;
         }
-        .out{
+
+        .out {
             width: 500px;
             height: 500px;
             background-color: gray;
@@ -39,91 +44,93 @@
     </style>
 </head>
 <body>
-    <div class="box" id="root"></div>
-    <div class="box2" id="box"></div>
-    <h3>标题1</h3>
-    <h3>标题2</h3>
-    <h3>标题3</h3>
-    <h3>标题4</h3>
-    <div class="out">
-        <div class="box3" id="big"></div>
-    </div>
-    
-    <script>
-        //属性
-        //Element.id:返回指定元素的`id`属性，该属性可读写
-        var root = document.getElementById("root")
-        console.log(root.id);
-        root.id = "roots"
-        console.log(root.id);
+<div class="box" id="root"></div>
+<div class="box2" id="box"></div>
+<h3>标题1</h3>
+<h3>标题2</h3>
+<h3>标题3</h3>
+<h3>标题4</h3>
+<div class="out">
+    <div class="box3" id="big"></div>
+</div>
 
-        //Element.className:读写当前元素节点的class属性
-        console.log(root.className);
-        root.className = "box box1"
+<script>
+    // 属性
+    // Element.id:返回指定元素的`id`属性，该属性可读写
+    let root = document.getElementById("root")
+    console.log(root.id);
+    root.id = "roots"
+    console.log(root.id);
 
-        //Element.classList
-        /*方法：
-          add()：增加一个 class。
-          remove()：移除一个 class。
-          contains()：检查当前元素是否包含某个 class。
-          toggle()：将某个 class 移入或移出当前元素。
-        */
-        root.classList.add("mybox");
-        root.classList.remove("box")
-        console.log(root.className);
-        if (root.classList.contains("box1")) {
-            console.log("有");
-        }else{
-            console.log("没有");
-        }
+    // Element.className:读写当前元素节点的class属性
+    console.log(root.className);
+    root.className = "box box1"
 
-        //Element.innerHTML:该属性可读写，常用来设置某个节点的内容。它能改写所有元素节点的内容，包括`<HTML>`和`<body>`元素。
-        console.log(root.innerHTML = "大家好");
+    // Element.classList
+    /*
+    方法：
+        > add()：增加一个 class。
+        > remove()：移除一个 class。
+        > contains()：检查当前元素是否包含某个 class。
+        > toggle()：将某个 class 移入或移出当前元素。
+    */
+    root.classList.add("mybox");
+    root.classList.remove("box")
+    console.log(root.className);
+    if (root.classList.contains("box1")) {
+        console.log("有");
+    } else {
+        console.log("没有");
+    }
 
-        //Element.innerText:
-        // console.log(root.innerText = "你好");
+    // Element.innerHTML:该属性可读写，常用来设置某个节点的内容。它能改写所有元素节点的内容，包括`<HTML>`和`<body>`元素。
+    console.log(root.innerHTML = "大家好");
 
-        /*Element.innerHTML和Element.innerText的区别:
-        innerHTML可以识别标签
-        innerText会把一个标签识别成一个字符串
-        */
-        var str = "<a herf = 'https://www.baidu.com'>百度</a>"
-        root.innerText = str
+    // Element.innerText:
+    // console.log(root.innerText = "你好");
 
-
-        //获取元素位置
-
-        //Element.clientHeight:获取元素高度包括`padding`部分，但是不包括`border`、`margin`
-        //Element.clientWidth:获取元素宽度包括`padding`部分，但是不包括`border`、`margin`
-        var box = document.getElementById("box")
-        console.log(box.clientHeight);
-        console.log(box.clientWidth);
-        //获取视口高度
-        console.log(document.documentElement.clientHeight);
-        //获取网页总高度
-        console.log(document.body.clientHeight);
-
-        //Element.scrollHeight:元素总高度，它包括`padding`，但是不包括`border`、`margin`包括溢出的不可见内容
-        //Element.scrollWidth:元素总宽度，它包括`padding`，但是不包括`border`、`margin`包括溢出的不可见内容
-        //实际上在应用中与Element.clientHeight和Element.clientWidth几乎没区别
-
-        //Element.offsetLeft:表示当前元素的水平滚动条向右侧滚动的像素数量
-        //Element.offsetTop:表示当前元素的垂直滚动条向下滚动的像素数量
-        console.log(document.documentElement.scrollLeft);
-        console.log(document.documentElement.scrollTop);
-
-        //Element.offsetHeight:元素的 CSS 垂直高度（单位像素），包括元素本身的高度、padding 和 border
-        //Element.offsetWidth:元素的 CSS 水平宽度（单位像素），包括元素本身的高度、padding 和 border
-        console.log(box.offsetHeight);
-        console.log(box.offsetWidth);
-
-        //Element.offsetLeft:到定位父级左边界的间距
-        //Element.offsetTop:到定位父级上边界的间距
-        var box3 = document.getElementById("big")
-        console.log(box3.offsetLeft);  //有网页自带的8像素
-        console.log(box3.offsetTop);
+    /*
+    Element.innerHTML和Element.innerText的区别:
+        > innerHTML可以识别标签
+        > innerText会把一个标签识别成一个字符串
+    */
+    let str = "<a herf = 'https://www.baidu.com'>百度</a>"
+    root.innerText = str
 
 
-    </script>
+    // 获取元素位置
+
+    // Element.clientHeight:获取元素高度包括`padding`部分，但是不包括`border`、`margin`
+    // Element.clientWidth:获取元素宽度包括`padding`部分，但是不包括`border`、`margin`
+    let box = document.getElementById("box")
+    console.log(box.clientHeight);
+    console.log(box.clientWidth);
+    // 获取视口高度
+    console.log(document.documentElement.clientHeight);
+    // 获取网页总高度
+    console.log(document.body.clientHeight);
+
+    // Element.scrollHeight:元素总高度，它包括`padding`，但是不包括`border`、`margin`包括溢出的不可见内容
+    // Element.scrollWidth:元素总宽度，它包括`padding`，但是不包括`border`、`margin`包括溢出的不可见内容
+    // 实际上在应用中与Element.clientHeight和Element.clientWidth几乎没区别
+
+    // Element.offsetLeft:表示当前元素的水平滚动条向右侧滚动的像素数量
+    // Element.offsetTop:表示当前元素的垂直滚动条向下滚动的像素数量
+    console.log(document.documentElement.scrollLeft);
+    console.log(document.documentElement.scrollTop);
+
+    // Element.offsetHeight:元素的 CSS 垂直高度（单位像素），包括元素本身的高度、padding 和 border
+    // Element.offsetWidth:元素的 CSS 水平宽度（单位像素），包括元素本身的高度、padding 和 border
+    console.log(box.offsetHeight);
+    console.log(box.offsetWidth);
+
+    // Element.offsetLeft:到定位父级左边界的间距
+    // Element.offsetTop:到定位父级上边界的间距
+    let box3 = document.getElementById("big")
+    console.log(box3.offsetLeft);  // 有网页自带的8像素
+    console.log(box3.offsetTop);
+
+
+</script>
 </body>
 </html>

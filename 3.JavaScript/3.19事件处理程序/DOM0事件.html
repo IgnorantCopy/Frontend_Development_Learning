@@ -6,16 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="btn">按钮</button>
-    <script>
-        //DOM0级事件优点：HTML和JS是分离的  缺点：同一事件无法重复添加
-        var btn = document.getElementById("btn")
-        btn.onclick = function clickButton(){
-            console.log("点击了按钮1");
-        }
-        btn.onclick = function clickButton(){
-            console.log("点击了按钮2");
-        }
-    </script>
+<button id="btn">按钮</button>
+<script>
+    // DOM0级事件优点：HTML和JS是分离的  缺点：同一事件无法重复添加
+    let btn = document.getElementById("btn")
+    btn.onclick = function clickButton() {
+        console.log("点击了按钮1");
+    }
+    btn.onclick = function clickButton() {
+        console.log("点击了按钮2");
+    }
+</script>
 </body>
 </html>

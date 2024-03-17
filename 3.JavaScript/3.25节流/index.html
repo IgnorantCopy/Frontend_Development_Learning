@@ -5,40 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        h3{
+        h3 {
             height: 400px;
         }
     </style>
 </head>
 <body>
-    <h3>hahaha</h3>
-    <h3>hahaha</h3>
-    <h3>hahaha</h3>
-    <h3>hahaha</h3>
-    <h3>hahaha</h3>
-    <h3>hahaha</h3>
-    <h3>hahaha</h3>
-    <script>
-        window.onscroll = throttle(scrollHandle,2000)
-        function scrollHandle(){
-            console.log("页面滚动了");
-        }
+<h3>hahaha</h3>
+<h3>hahaha</h3>
+<h3>hahaha</h3>
+<h3>hahaha</h3>
+<h3>hahaha</h3>
+<h3>hahaha</h3>
+<h3>hahaha</h3>
+<script>
+    window.onscroll = throttle(scrollHandle, 2000)
 
-        function throttle(fn,delay) {
-            var flag = true
-            return function(){
-                if (!flag) {
-                    return false;
-                }
-                flag = false
-                setTimeout(function() {
-                    fn();
-                    flag = true;
-                }, delay);
+    function scrollHandle() {
+        console.log("页面滚动了");
+    }
+
+    function throttle(fn, delay) {
+        let flag = true
+        return function () {
+            if (!flag) {
+                return false;
             }
-            
+            flag = false
+            setTimeout(function () {
+                fn();
+                flag = true;
+            }, delay);
         }
 
-    </script>
+    }
+
+</script>
 </body>
 </html>
