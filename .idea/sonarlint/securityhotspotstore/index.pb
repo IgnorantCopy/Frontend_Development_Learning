@@ -295,9 +295,37 @@ c
 -5.NodeJS/5.7Express/10-generator/package.json,b\6\b64aa8d7e86da0d731982c2a05c91b9513597cdd
 w
 G5.NodeJS/5.7Express/10-generator/node_modules/formidable/dist/index.cjs,0\9\0906075839a99c4c7e4533b0acae02a092b789a6
-Y
-)5.NodeJS/5.8Example/accounts/package.json,d\3\d351c929ba223e8755195b1017c8d935826c65ce
-S
-#5.NodeJS/5.8Example/accounts/app.js,8\6\865fe2e7f54706e64eb8e8a60091751c9c8d9498
-\
-,5.NodeJS/5.8Example/accounts/routes/index.js,d\c\dc254bfe8b429f867b5c5e03e0854ccdfb7179c3
+Q
+!5.NodeJS/5.8Mongoose/package.json,4\4\449dddd6afe4bf968216fb4fb26fa514b455adcb
+O
+5.NodeJS/5.8Mongoose/01-link.js,3\8\3804509653f81738b6c99fc8da6a945b346d9ef5
+P
+ 5.NodeJS/5.8Mongoose/01-field.js,0\5\05b694d76b6286e6537e642a30068f7dc6e436b9
+l
+<5.NodeJS/5.8Mongoose/node_modules/mongoose/types/models.d.ts,d\b\db1834bfbf5d33697835d89c3b310a30324a1f06
+Q
+!5.NodeJS/5.8Mongoose/02-delete.js,e\0\e006d6dbd2d404e48a3c03d7ed36f1f6684b8f60
+V
+&5.NodeJS/5.8Mongoose/01-link&create.js,9\2\928acaff6278b56fb7d05adbdcfee1d50150c4d1
+Q
+!5.NodeJS/5.8Mongoose/03-update.js,0\0\00c13fd66a1fe4c3cd3e4877a63cbc0a43e13958
+O
+5.NodeJS/5.8Mongoose/04-read.js,8\d\8d574bb97d5d3dea17177a2ba96afde1f0503daa
+Q
+!5.NodeJS/5.8Mongoose/05-filter.js,2\f\2fee574c8e9cdfe04c5ff68929a8b0166b451c64
+V
+&5.NodeJS/5.8Mongoose/06-personalize.js,2\4\24fe91eafc7c0b7d35110e305f1b9a34c3bc487e
+_
+/5.NodeJS/5.8Mongoose/07-modularization/index.js,4\3\43b5e376146fee9a4f73b788c73354dfd0c58451
+h
+85.NodeJS/5.8Mongoose/07-modularization/01-link&create.js,9\1\91bbb0b0b0a0ea5774515e322d160843b9196c96
+`
+05.NodeJS/5.8Mongoose/07-modularization/create.js,6\d\6d3e5698d3515669d67c876aee5a564ed00f9649
+_
+/5.NodeJS/5.8Mongoose/07-modularization/db/db.js,a\9\a9ee92d708b6f8c35a0b0147b231b9965500d9fd
+j
+:5.NodeJS/5.8Mongoose/07-modularization/models/BookModel.js,7\c\7c5d32a69ebc96f93abb0edc527e7593d37a9ead
+g
+75.NodeJS/5.8Mongoose/07-modularization/config/config.js,e\5\e59ac220bd1854be6a4f497e836858b0a1c00049
+N
+5.NodeJS/5.9JsonServer/db.json,f\d\fdb710a5b17d2540dc84276b3911044de3e030a5
