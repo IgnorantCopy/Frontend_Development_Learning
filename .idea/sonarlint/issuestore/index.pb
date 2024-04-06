@@ -297,10 +297,6 @@ w
 G5.NodeJS/5.7Express/10-generator/node_modules/formidable/dist/index.cjs,0\9\0906075839a99c4c7e4533b0acae02a092b789a6
 Q
 !5.NodeJS/5.8Mongoose/package.json,4\4\449dddd6afe4bf968216fb4fb26fa514b455adcb
-O
-5.NodeJS/5.8Mongoose/01-link.js,3\8\3804509653f81738b6c99fc8da6a945b346d9ef5
-P
- 5.NodeJS/5.8Mongoose/01-field.js,0\5\05b694d76b6286e6537e642a30068f7dc6e436b9
 l
 <5.NodeJS/5.8Mongoose/node_modules/mongoose/types/models.d.ts,d\b\db1834bfbf5d33697835d89c3b310a30324a1f06
 Q
@@ -317,10 +313,6 @@ V
 &5.NodeJS/5.8Mongoose/06-personalize.js,2\4\24fe91eafc7c0b7d35110e305f1b9a34c3bc487e
 _
 /5.NodeJS/5.8Mongoose/07-modularization/index.js,4\3\43b5e376146fee9a4f73b788c73354dfd0c58451
-h
-85.NodeJS/5.8Mongoose/07-modularization/01-link&create.js,9\1\91bbb0b0b0a0ea5774515e322d160843b9196c96
-`
-05.NodeJS/5.8Mongoose/07-modularization/create.js,6\d\6d3e5698d3515669d67c876aee5a564ed00f9649
 _
 /5.NodeJS/5.8Mongoose/07-modularization/db/db.js,a\9\a9ee92d708b6f8c35a0b0147b231b9965500d9fd
 j
@@ -329,3 +321,11 @@ g
 75.NodeJS/5.8Mongoose/07-modularization/config/config.js,e\5\e59ac220bd1854be6a4f497e836858b0a1c00049
 N
 5.NodeJS/5.9JsonServer/db.json,f\d\fdb710a5b17d2540dc84276b3911044de3e030a5
+X
+(5.NodeJS/5.10SessionControl/package.json,6\b\6be56174ce2b975580ec2025d5417688fe6d3efa
+\
+,5.NodeJS/5.10SessionControl/Cookie/cookie.js,c\0\c097a3b827eb6b2d491ef6d16511b4ba5eb84e2c
+^
+.5.NodeJS/5.10SessionControl/Session/session.js,7\2\7212311fcbf82e5b7837cdc313bcafb3cf882787
+X
+(5.NodeJS/5.10SessionControl/Token/jwt.js,a\0\a0e87761974a35b94926a2bcde1b2f37e3c192de
