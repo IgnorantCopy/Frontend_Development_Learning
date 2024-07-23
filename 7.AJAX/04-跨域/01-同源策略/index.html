@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Hello AJAX</h1>
+<button>get data</button>
+<script>
+    const button = document.querySelector('button');
+    button.onclick = function () {
+        const xhr = new XMLHttpRequest();
+        // 由于满足同源策略，所以 url 可以简写
+        xhr.open('GET', '/data');
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    console.log(xhr.response)
+                } else {
+
+                }
+            }
+        };
+    }
+</script>
+</body>
+</html>

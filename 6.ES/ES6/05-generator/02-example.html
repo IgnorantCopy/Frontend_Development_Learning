@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // output 111 after 1s, 222 after 2s, 333 after 3s
+    // callback hell
+    setTimeout(() => {
+        console.log(111)
+        setTimeout(() => {
+            console.log(222)
+            setTimeout(() => {
+                console.log(333)
+            }, 3000)
+        }, 2000)
+    }, 1000)
+
+    // generator
+    function one() {
+        setTimeout(() => {
+            console.log(111)
+            iterator.next()
+        }, 1000)
+    }
+
+    function two() {
+        setTimeout(() => {
+            console.log(222)
+            iterator.next()
+        }, 2000)
+    }
+
+    function three() {
+        setTimeout(() => {
+            console.log(333)
+            iterator.next()
+        }, 3000)
+    }
+
+    function *generator() {
+        yield one()
+        yield two()
+        yield three()
+    }
+
+    let iterator = generator()
+    iterator.next()
+
+</script>
+</body>
+</html>

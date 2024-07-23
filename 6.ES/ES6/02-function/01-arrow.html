@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let add = (a, b) => a + b;
+    console.log(add(2, 3));
+
+    let multiply = (a, b) => {
+        return a * b;
+    }
+    console.log(multiply(2, 3));
+    console.log()
+
+    // this is static binding in the value in the current scope.
+    function f1() {
+        console.log(this.num);
+    }
+
+    let f2 = () => {
+        console.log(this.num);
+    }
+    window.num = 10;
+    const numObj = {num: 20};
+    f1();
+    f2();
+    // use call to use the function
+    f1.call(numObj);
+    f2.call(numObj);
+
+    // cannot use arguments or super in arrow functions.
+    // let arrowFunc = () => {
+    // console.log(arguments); // ReferenceError: arguments is not defined
+    // console.log(super); // ReferenceError: super is not defined
+    // }
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // reasons to use symbol: to create unique identifiers for objects
+    // create a 03-symbol
+    let s = Symbol();
+    console.log(s, typeof s);
+
+    let s2 = Symbol("foo");
+    let s3 = Symbol("foo");
+    console.log(s2, typeof s2);
+    console.log(s2 === s3);
+
+    let s4 = Symbol.for("bar");
+    let s5 = Symbol.for("bar");
+    console.log(s4, typeof s4);
+    console.log(s4 === s5);
+
+    // symbol cannot operate with other types
+    // console.log(s + 1); // TypeError: Cannot convert a Symbol value to a number
+
+    /*
+     * data types:
+     *  USONB: undefined, string, number, boolean, 03-symbol
+     */
+
+    let game = {
+        name: "Super Mario",
+        up: function () {
+            console.log("jump");
+        },
+        down: function () {
+            console.log("duck");
+        },
+        [Symbol('speak')]: function () {
+            console.log("I can speak");
+        }
+    }
+
+    let methods = {
+        up: Symbol(),
+        down: Symbol(),
+    }
+
+    game[methods.up] = function () {
+        console.log("up");
+    }
+
+    game[methods.down] = function () {
+        console.log("down");
+    }
+
+    console.log(game);
+
+    // built-in symbols
+    // Symbol.hasInstance
+    class Person {
+        // control type checking
+        static [Symbol.hasInstance](instance) {
+            return instance instanceof Object && instance.name !== undefined;
+        }
+    }
+
+    let obj = {};
+    console.log(obj instanceof Person);
+
+    // Symbol.isConcatSpreadable
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5, 6];
+    arr2[Symbol.isConcatSpreadable] = false;
+    console.log(arr1.concat(arr2));
+
+    // Symbol.iterator: used to create an iterator for an object
+    // Symbol.match: used to match a regular expression in a string
+    // Symbol.replace: used to replace a substring in a string
+    // Symbol.search: used to search for a substring in a string
+    // Symbol.species: used to create derived objects from a base object
+    // Symbol.split: used to split a string into an array
+    // Symbol.toPrimitive: used to convert an object to a primitive value
+    // Symbol.toStringTag: used to get the type of an object
+    // Symbol.unscopables: used to hide properties from with statement
+
+
+</script>
+</body>
+</html>

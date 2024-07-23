@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1. default parameters
+    function greet(name = "John") {
+        console.log(`Hello ${name}`);
+    }
+
+    greet();
+
+    function connect({host = "127.0.0.1", username, password, port}) {
+        console.log(`Connecting to ${host} with username ${username} and password ${password} on port ${port}`);
+    }
+
+    connect({
+        host: "localhost",
+        username: "admin",
+        password: "password",
+        port: 3306,
+    })
+    console.log()
+
+    // 2. rest parameters
+    function sum(...numbers) {
+        let result = 0;
+        for (const element of numbers) {
+            result += element;
+        }
+        return result;
+    }
+
+    console.log(sum(1, 2, 3, 4, 5));
+    console.log()
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.7.2/axios.js"></script>
+</head>
+<body>
+<div>
+    <h2>AJAX with jQuery</h2>
+    <button>GET</button>
+    <button>POST</button>
+    <button>通用型AJAX</button>
+</div>
+<script>
+    const buttons = document.querySelectorAll('button');
+    // 配置 baseURL
+    axios.defaults.baseURL = 'http://localhost:8000';
+
+    buttons[0].onclick = function () {
+        axios.get('axios-server', {
+            params: {
+                id: 100,
+                vip: true
+            },
+            headers: {
+                name: 'Ignorant',
+                age: 25
+            }
+        }).then(function (value) {
+            console.log(value)
+        })
+    }
+    buttons[1].onclick = function () {
+        axios.post('/axios-server', {
+                username: 'admin',
+                password: '123456'
+            }, {
+                params: {
+                    id: 200,
+                    vip: false
+                },
+                headers: {
+                    height: 180,
+                    weight: 65,
+                }
+            }
+        )
+    }
+    buttons[2].onclick = function () {
+        axios({
+            url: '/axios-server',
+            method: 'POST',
+            params: {
+                vip: true,
+                level: 10
+            },
+            headers: {
+                a: 1,
+                b: 2,
+            },
+            data: {
+                username: 'admin',
+                password: '123456'
+            }
+        }).then(res => {
+            console.log(res)
+            console.log(res.status)
+            console.log(res.statusText)
+            console.log(res.headers)
+            console.log(res.data)
+        })
+    }
+</script>
+</body>
+</html>

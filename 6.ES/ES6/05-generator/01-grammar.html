@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // generator is a special type of function
+    function *generator1() {
+        console.log(111)
+        yield 'a'
+
+        console.log(222)
+        yield 'b'
+
+        console.log(333)
+        yield 'c'
+
+        console.log(444)
+    }
+
+    let iterator1 = generator1()
+    console.log(iterator1)
+    // iterate the generator
+    for (let v of iterator1) {
+        console.log(v)
+    }
+
+    function *generator2(arg) {
+        console.log(arg)
+        let one = yield 1
+        console.log(one)
+        yield 2
+        yield 3
+    }
+
+    let iterator2 = generator2("hello")
+    console.log(iterator2.next())
+    console.log(iterator2.next("world"))    // the argument is passed to the last yield
+    console.log(iterator2.next('!'))
+</script>
+</body>
+</html>

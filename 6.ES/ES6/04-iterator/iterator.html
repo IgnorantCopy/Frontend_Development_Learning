@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const arr = [1, 2, 3, 4, 5];
+    // use for of loop to iterate over the elements of the array
+    for (let v of arr) {
+        console.log(v);
+    }
+    /*
+     * theory:
+     *  1. create a pointer to the first element of the array when the first call to next() is made
+     *  2. when next() is called, return the current element and move the pointer to the next element
+     *  3. when the end of the array is reached, return the value undefined and stop iterating
+     *  4. every time next() is called, it returns an object with two properties: done and value
+     */
+    const iterator = arr[Symbol.iterator]();
+    console.log(iterator.next())
+    console.log(iterator.next())
+    console.log(iterator.next())
+    console.log(iterator.next())
+    console.log(iterator.next())
+    console.log(iterator.next())
+
+    const clazz = {
+        name: "class1",
+        students: [
+            'Jack',
+            'Jane',
+            'John'
+        ],
+        [Symbol.iterator]() {
+            let index = 0;
+            let _this = this;
+            return {
+                next: function () {
+                    if (index < _this.students.length) {
+                        const result = {value: _this.students[index], done: false};
+                        index++;
+                        return result;
+                    } else {
+                        return {value: undefined, done: true};
+                    }
+                }
+            }
+        }
+    }
+
+    for (let v of clazz) {
+        console.log(v);
+    }
+
+</script>
+</body>
+</html>

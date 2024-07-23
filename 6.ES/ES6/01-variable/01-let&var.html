@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    {
+        // let keyword is used to declare a block-scoped variable.
+        let x = 10;
+        var y = 20;
+    }
+    console.log(y);
+    // console.log(x); // ReferenceError: x is not defined
+
+    console.log(a)  // OK, a is undefined
+    var a = 10;     // window has a property named "a"
+    // console.log(b) // ReferenceError: b is not defined
+    let b = 20;
+    // as a result, avoid using var keyword to declare variables in strict mode.
+    console.log()
+</script>
+</body>
+</html>

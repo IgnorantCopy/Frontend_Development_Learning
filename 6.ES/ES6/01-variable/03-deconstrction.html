@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // array destructuring
+    let [one, two, three] = [1, 2, 3];
+    console.log(one, two, three);
+    // object destructuring
+    let {name, age, method} = {
+        name: "John",
+        age: 30,
+        // : function() is simplified
+        method() {
+            console.log("This is a method.");
+        }
+    };
+    console.log(name, age, method);
+    console.log()
+</script>
+</body>
+</html>
