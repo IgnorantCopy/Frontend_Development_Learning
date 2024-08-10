@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1. 命名捕获
+    let str1 = "<a href='https://www.google.com'>谷歌</a>"
+    let reg1 = /<a href='(?<url>.*)'>(?<text>.*)<\/a>/
+    const result1 = reg1.exec(str1)
+    console.log(result1)
+    // 2. 反向断言
+    let str2 = "abcd1234Aefg5678Bhij";
+    let reg2 = /\d+(?=B)/   // 正向断言
+    const result2 = reg2.exec(str2)
+    let reg3 = /(?<=g)\d+/  // 反向断言     < 代表前面，! 代表非贪婪
+    const result3 = reg3.exec(str2)
+    console.log(result2)
+    console.log(result3)
+    // 3. dotAll 模式
+    let str3 = `
+    <ul>
+        <li>
+            <a>肖申克的救赎</a>
+            <p>上映时间：1994-09-10</p>
+        </li>
+        <li>
+            <a>阿甘正传</a>
+            <p>上映时间：1994-06-05</p>
+        </li>
+    </ul>`;
+    // let reg4 = /<li>\s+<a>(.*?)<\/a>\s+<p>(.*?)<\/p>/;
+    let reg4 = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/gs;
+    let result4;
+    let data = [];
+    while ((result4 = reg4.exec(str3)) !== null) {
+        data.push({
+            title: result4[1],
+            date: result4[2],
+        });
+    }
+    console.log(data);
+</script>
+</body>
+</html>

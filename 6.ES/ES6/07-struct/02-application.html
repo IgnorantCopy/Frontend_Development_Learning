@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+    // 1. 数组去重
+    let uniqueArr = [...new Set(arr)];
+    console.log(uniqueArr);
+    // 2. 交集
+    let arr2 = [4, 5, 6, 5, 6];
+    let intersectArr = [...new Set(arr)].filter(x => new Set(arr2).has(x));
+    console.log(intersectArr);
+    // 3. 并集
+    let unionArr = [...new Set([...new Set(arr), ...new Set(arr2)])];
+    console.log(unionArr);
+    // 4. 差集
+    let diffArr = [...new Set(arr)].filter(x => !new Set(arr2).has(x));
+    console.log(diffArr);
+</script>
+</body>
+</html>

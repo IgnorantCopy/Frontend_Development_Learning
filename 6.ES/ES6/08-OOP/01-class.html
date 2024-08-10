@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Phone {
+        constructor(brand, price) {
+            this.brand = brand;
+            this.price = price;
+        }
+
+        // methods
+        call() {
+            console.log(`Calling ${this.brand}...`);
+        }
+    }
+
+    let phone = new Phone('Samsung', 1000);
+    console.log(phone);
+</script>
+</body>
+</html>

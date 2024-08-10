@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('success')
+        }, 1000)
+    })
+
+    /*
+     * then() method returns a new Promise object, which is resolved with the result of the callback function.
+     *  1. If the callback function returns a non-promise value, it will return the value from resolve() method.
+     *  2. If the callback function returns a promise, it will return the new promise.
+     * this mechanism allows chaining of multiple asynchronous operations.
+     */
+    const result = promise.then(value => {
+        console.log(value)
+    }, reason => {
+        console.log(reason)
+    })
+
+    console.log(result)
+</script>
+</body>
+</html>

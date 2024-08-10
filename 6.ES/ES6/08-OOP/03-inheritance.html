@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Phone {
+        constructor(brand, price) {
+            this.brand = brand;
+            this.price = price;
+        }
+
+        call() {
+            console.log("Calling...");
+        }
+    }
+
+    class SmartPhone extends Phone {
+        constructor(brand, price, os) {
+            super(brand, price);
+            this.os = os;
+        }
+
+        game() {
+            console.log("Playing games...");
+        }
+
+        photo() {
+            console.log("Taking photos...");
+        }
+
+        call() {
+            super.call();
+            console.log("Ringing...");
+        }
+    }
+
+    const samsung = new SmartPhone("Samsung", 1000, "Android");
+    console.log(samsung);
+    samsung.call();
+</script>
+</body>
+</html>

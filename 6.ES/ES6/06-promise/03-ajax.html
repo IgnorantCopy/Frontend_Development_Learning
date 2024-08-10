@@ -8,13 +8,26 @@
 <body>
 <script>
     // addr: https://api.apiopen.top/getJoke
+    const promise = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', 'https://api.apiopen.top/getJoke')
+        xhr.send()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(xhr.response)
+                } else {
+                    reject(xhr.status)
+                }
+            }
+        }
+    })
 
-    const xhr = new XMLHttpRequest()
-
-    xhr.open('GET', 'https://api.apiopen.top/getJoke')
-    xhr.send()
-    xhr.onreadystatechange = function () {
-    }
+    promise.then(function (value) {
+        console.log(value)
+    }, function (reason) {
+        console.log('error:', reason)
+    })
 </script>
 </body>
 </html>

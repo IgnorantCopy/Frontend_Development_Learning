@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function connect({host, port, ...user}) {
+        console.log(`Connecting to ${host}:${port} as ${user.username} with password ${user.password}`);
+    }
+
+    connect({
+        host: "localhost",
+        port: 8080,
+        username: "admin",
+        password: "123456",
+    });
+
+    const user1 = {
+        name1: "John",
+        age1: 30,
+    };
+    const user2 = {
+        name2: "Jane",
+        age2: 25,
+    };
+    const user3 = {
+        name3: "Bob",
+        age3: 40,
+    };
+
+    const users = {...user1, ...user2, ...user3};
+    console.log(users);
+</script>
+</body>
+</html>

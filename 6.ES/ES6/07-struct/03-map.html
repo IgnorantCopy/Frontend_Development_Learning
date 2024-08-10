@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let map1 = new Map();
+    map1.set("name", "Ignorant");
+    map1.set("change", () => {
+        console.log("Changed");
+    });
+    let key = {
+        school: "NJU",
+    }
+    map1.set(key, ["Nanjing", "Suzhou"]);
+    console.log(map1);
+
+    map1.delete("name");
+    console.log(map1.size);
+    console.log(map1.get(key));
+
+    for (let v of map1) {
+        console.log(v);
+    }
+
+</script>
+</body>
+</html>

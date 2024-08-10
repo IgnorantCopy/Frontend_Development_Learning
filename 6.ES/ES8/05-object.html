@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const school = {
+        name: "ABC School",
+        cities: ["New York", "Los Angeles", "Chicago"],
+        teachers: ["John", "Jane", "Bob"],
+        students: ["Alice", "Tom", "Mike"]
+    };
+    // 1. 对象的键与值
+    console.log(Object.keys(school));
+    console.log(Object.values(school));
+    //2. 对象转化为 Map
+    const entries = Object.entries(school)
+    console.log(new Map(entries));
+    /// 3. 对象属性的描述对象
+    const descriptor = Object.getOwnPropertyDescriptor(school, "name");
+    console.log(descriptor);
+</script>
+</body>
+</html>
