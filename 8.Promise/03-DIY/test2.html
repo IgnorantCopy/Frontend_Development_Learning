@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="promise.js"></script>
+</head>
+<body>
+<script>
+    const promise1 = Promise.resolve('OK');
+    const promise2 = Promise.resolve(new Promise((resolve, reject) => {
+        resolve('Success!');
+    }));
+    const promise3 = Promise.resolve(Promise.resolve('Hello'));
+    console.log(promise1);
+    console.log(promise2);
+    console.log(promise3);
+    let result1 = Promise.all([promise1, promise2, promise3]);
+    console.log(result1);
+    let result2 = Promise.race([promise1, promise2, promise3]);
+    console.log(result2);
+</script>
+</body>
+</html>

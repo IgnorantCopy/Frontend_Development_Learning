@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1. from a 2D array
+    let result = Object.fromEntries([
+        ['name', 'Ignorant'],
+        ['age', 25],
+    ]);
+    console.log(result);
+
+    // 2. from a map
+    const map = new Map([
+        ['name', 'Ignorant'],
+        ['age', 25],
+    ]);
+    result = Object.fromEntries(map);
+    console.log(result);
+
+</script>
+</body>
+</html>

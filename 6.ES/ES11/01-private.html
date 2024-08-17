@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Person {
+        // public properties
+        name;
+        // private properties
+        #age;
+        #weight;
+
+        // constructor
+        constructor(name, age, weight) {
+            this.name = name;
+            this.#age = age;
+            this.#weight = weight;
+        }
+
+        intro() {
+            console.log(`Hi, my name is ${this.name} and I am ${this.#age} years old and weigh ${this.#weight} kg.`);
+        }
+    }
+
+    const person = new Person("John", 25, 70);
+    person.intro();
+</script>
+</body>
+</html>

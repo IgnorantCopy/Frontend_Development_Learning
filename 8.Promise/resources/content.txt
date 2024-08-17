@@ -1,0 +1,7 @@
+hello world
+hello promise
+abc def ghi
+function myFunction() {
+  console.log("Hello, World!");
+}
+return 0;

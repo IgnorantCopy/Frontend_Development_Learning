@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1. Change the status of Promise
+    let promise1 = new Promise((resolve, reject) => {
+        // 1. resolve()
+        resolve('123');     // pending -> fulfilled
+        // 2. reject()
+        // reject('error');       // pending -> rejected
+        // 3. throw error
+        // throw new Error('error');0
+    });
+
+    // 2. callbacks of Promise
+    promise1.then(value => {
+        console.log(value);
+    })
+    promise1.then(value => {
+        alert(value);
+    })
+
+
+    // 3. sequentially execute callbacks
+    /*
+     * 正常情况：先指定回调再改变状态
+     * 先改状态再指定回调的情况：
+     *  ① 再执行器中直接调用 resolve() 或 reject()
+     *  ② 延迟时间才调用 then()
+     * 得到数据的时机：后面一个操作执行完
+     */
+    let promise2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('456');
+        }, 1000);
+    });
+    let result = promise2.then(value => {
+        console.log(value);
+    }, reason => {
+        console.log(reason);
+    })
+    console.log(result);
+
+    // 4. exception penetration
+    let promise3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject('error');
+        }, 1000);
+    });
+    promise3.then(value => {
+        console.log(111);
+    }).then(value => {
+        console.log(222);
+    }).then(value => {
+        console.log(333);
+    }).catch(reason => {
+        console.warn(reason);
+    })
+
+    // 5. break the chain: return a new Promise in pending state
+    let promise4 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('OK');
+        }, 1000);
+    });
+    promise4.then(value => {
+        console.log(111);
+    }).then(value => {
+        console.log(222);
+        // 有且仅有这一种方式
+        return new Promise(() => {});
+    }).then(value => {
+        console.log(333);
+    }).catch(reason => {
+        console.warn(reason);
+    })
+</script>
+</body>
+</html>

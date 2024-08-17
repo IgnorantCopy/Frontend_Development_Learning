@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function main(config) {
+        const dbHost = config?.db?.host;    // 判断是否存在 db.host 属性
+        console.log(dbHost);
+    }
+
+    main({
+        db: {
+            host: 'localhost',
+            port: 3306,
+        },
+        cache: {
+            host: 'localhost',
+            port: 6379,
+        },
+    })
+</script>
+</body>
+</html>

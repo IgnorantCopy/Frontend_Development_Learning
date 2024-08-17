@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let num = 521n;
+    console.log(num);
+    console.log(typeof num);
+
+    let num2 = 123;
+    console.log(BigInt(num2));
+
+    // application
+    let max = Number.MAX_SAFE_INTEGER;
+    console.log(BigInt(max));
+    console.log(BigInt(max) + 1n);
+</script>
+</body>
+</html>

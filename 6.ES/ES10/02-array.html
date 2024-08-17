@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1. flat
+    const arr = [1, 2, [3, 4], 5, [6, [7, 8]]];
+    const flatArr = arr.flat();
+    console.log(flatArr);
+    console.log(arr.flat(2));
+
+    // 2. flatMap
+    const arr2 = [1, 2, 3, 4, 5];
+    const result = arr2.flatMap(i => [i * 2]);
+    console.log(result);
+</script>
+</body>
+</html>
