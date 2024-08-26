@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap-grid.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.7.4/axios.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 class="page-header">基本使用</h2>
+    <button class="btn btn-primary"> GET</button>
+    <button class="btn btn-warning"> POST</button>
+    <button class="btn btn-success"> PUT</button>
+    <button class="btn btn-danger"> DELETE</button>
+</div>
+<script>
+    const btns = document.querySelectorAll('button');
+    btns[0].onclick = () => {
+        axios({
+            method: 'GET',
+            url: 'http://localhost:3000/posts/2',
+        }).then(value => {
+            console.log(value);
+        });
+    };
+    btns[1].onclick = () => {
+        axios({
+            method: 'POST',
+            url: 'http://localhost:3000/posts',
+            data: {
+                title: 'test',
+                author: 'Ignorant',
+            }
+        }).then(value => {
+            console.log(value);
+        });
+    };
+    btns[2].onclick = () => {
+        axios({
+            method: 'PUT',
+            url: 'http://localhost:3000/posts/93c6',
+            data: {
+                "title": "test",
+                "author": "IgnorantCopy"
+            }
+        }).then(value => {
+            console.log(value);
+        });
+    };
+    btns[3].onclick = () => {
+        axios({
+            method: 'DELETE',
+            url: 'http://localhost:3000/posts/93c6',
+        }).then(value => {
+            console.log(value);
+        });
+    };
+</script>
+</body>
+</html>

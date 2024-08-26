@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap-grid.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.7.4/axios.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 class="page-header">基本使用</h2>
+    <button class="btn btn-primary"> GET</button>
+    <button class="btn btn-warning"> POST</button>
+    <button class="btn btn-success"> PUT</button>
+    <button class="btn btn-danger"> DELETE</button>
+</div>
+<script>
+    const btns = document.querySelectorAll('button');
+    axios.defaults.method = 'GET';
+    axios.defaults.baseURL = 'http://localhost:3000';
+    axios.defaults.timeout = 3000;
+    btns[0].onclick = () => {
+        axios({
+            url: 'posts/2',
+        }).then(value => {
+            console.log(value);
+        });
+    };
+</script>
+</body>
+</html>
