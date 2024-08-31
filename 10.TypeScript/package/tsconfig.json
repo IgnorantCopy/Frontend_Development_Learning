@@ -1,0 +1,17 @@
+{
+  "include": [
+    "src/**/*",
+    "src/*"
+  ],
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ES2015",
+    "outDir": "dist",
+    "noEmit": false,
+    "noEmitOnError": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  }
+}

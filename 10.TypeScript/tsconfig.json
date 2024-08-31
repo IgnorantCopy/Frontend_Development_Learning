@@ -1,0 +1,48 @@
+{
+  "include": [
+    // 指定哪些文件需要被编译
+    "src/**/*",
+    // ** 表示任意目录；* 表示任意文件
+    "./*"
+  ],
+  "exclude": [
+    // 指定哪些文件需要被忽略
+    "src/test/**/*"
+    // 默认值：["node_modules", "bower_components", "jspm_packages"]
+  ],
+  //  "extends": "./tsconfig.base.json",  —— 定义继承的配置文件
+  //  "files": [],   —— 指定编译的文件列表
+  "compilerOptions": {
+    "target": "ES2015",
+    // 指定编译的目标版本
+    "module": "ES2015",
+    // 指定模块的类型
+    // "lib": ["dom"],  // 指定编译的库文件
+    "outDir": "out",
+    // 指定输出目录
+    // "outFile": "index.js", => 输出为一个文件
+    "allowJs": false,
+    // 允许编译 JS 文件
+    "checkJs": false,
+    // 检查 JS 文件
+    "removeComments": true,
+    // 移除注释
+    "noEmit": false,
+    // 不生成输出文件
+    "noEmitOnError": true,
+    // 发生错误时不生成输出文件
+    "alwaysStrict": true,
+    // 严格模式
+    "noImplicitAny": true,
+    // 不允许隐式的 any 类型
+    "noImplicitThis": true,
+    // 不允许 this 隐式的 any 类型
+    "strict": true,
+    // 严格模式的总开关
+    // "strictNullChecks": true, // 严格的 null 检查
+    // "strictFunctionTypes": true, // 严格的函数类型检查
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  }
+}
