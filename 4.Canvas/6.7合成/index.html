@@ -8,199 +8,199 @@
 </head>
 
 <body>
-    <canvas id="canvas" width="600px" height="400px">
-        当前浏览器不支持canvas
-        <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
-    </canvas>
-    <script>
-        var canvas = document.getElementById("canvas")
-        var context = canvas.getContext("2d")
+<canvas id="canvas" width="600px" height="400px">
+    当前浏览器不支持canvas
+    <a href="https://www.google.cn/chrome/index.html">下载支持canvas的浏览器</a>
+</canvas>
+<script>
+    var canvas = document.getElementById("canvas")
+    var context = canvas.getContext("2d")
 
-        //图形遮盖策略
+    //图形遮盖策略
 
-        // source-over(默认)(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'source-over';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // source-over(默认)(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'source-over';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // source-in(*):
-        // context.fillStyle = 'rgba(255, 0, 0, 1)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'source-in';
-        // context.fillStyle = 'rgba(0, 0, 255, 1)';
-        // context.fillRect(250, 150, 100, 100);
+    // source-in(*):
+    // context.fillStyle = 'rgba(255, 0, 0, 1)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'source-in';
+    // context.fillStyle = 'rgba(0, 0, 255, 1)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // source-out(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'source-out';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // source-out(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'source-out';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // source-atop(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'source-atop';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // source-atop(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'source-atop';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // destination-over(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'destination-over';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // destination-over(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'destination-over';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // destination-in(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'destination-in';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // destination-in(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'destination-in';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // destination-out(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'destination-out';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // destination-out(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'destination-out';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // destination-atop(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'destination-atop';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // destination-atop(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'destination-atop';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // lighter(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'lighter';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // lighter(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'lighter';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // copy(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'copy';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // copy(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'copy';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // xor(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'xor';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // xor(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'xor';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // multiply(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'multiply';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // multiply(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'multiply';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // screen:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'screen';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // screen:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'screen';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // overlay:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'overlay';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // overlay:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'overlay';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // darken:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'darken';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // darken:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'darken';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // lighten:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'lighten';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // lighten:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'lighten';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // color-dodge:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'color-dodge';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // color-dodge:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'color-dodge';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // color-burn:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'color-burn';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // color-burn:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'color-burn';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // hard-light:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'hard-light';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // hard-light:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'hard-light';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // soft-light:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'soft-light';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // soft-light:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'soft-light';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // difference:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'difference';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // difference:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'difference';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // exclusion:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'exclusion';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // exclusion:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'exclusion';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // hue:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'hue';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // hue:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'hue';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // saturation:
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'saturation';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // saturation:
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'saturation';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // color(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'color';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // color(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'color';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-        // luminosity(*):
-        // context.fillStyle = 'rgb(255, 0, 0)';
-        // context.fillRect(300, 200, 100, 100);
-        // context.globalCompositeOperation = 'luminosity';
-        // context.fillStyle = 'rgb(0, 0, 255)';
-        // context.fillRect(250, 150, 100, 100);
+    // luminosity(*):
+    // context.fillStyle = 'rgb(255, 0, 0)';
+    // context.fillRect(300, 200, 100, 100);
+    // context.globalCompositeOperation = 'luminosity';
+    // context.fillStyle = 'rgb(0, 0, 255)';
+    // context.fillRect(250, 150, 100, 100);
 
-    </script>
+</script>
 </body>
 
 </html>
